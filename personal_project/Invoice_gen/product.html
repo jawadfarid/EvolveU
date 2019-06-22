@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>this is the Product page</h1>
+
+<table>
+    prod_id prod_name   prod_cost   inventory
+
+    <tr>
+    <th>Product ID</th>
+    <th>Product Name</th>
+    <th>Product Cost</th>
+    </tr>
+    
+    {% for item in product %}
+    <tr>
+    <td>{{item.prod_id}}</td>
+    <td>{{item.prod_name}}</td>
+    <td>{{item.prod_cost}}</td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
+{% endblock %}

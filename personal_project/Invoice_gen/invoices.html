@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>this is the invoices page</h1>
+
+<table>
+    <tr>
+    <th>Invoice Number</th>
+    <th>Invoice Date</th>
+    </tr>
+    
+    {% for item in invoices %}
+    <tr>
+    <td>{{item.cust_id}}</td>
+    <td>{{item.inv_date}}</td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
+{% endblock %}
