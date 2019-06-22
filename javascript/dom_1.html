@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic DOM</title>
+</head>
+<style>
+	#iddiv {
+	border:solid;
+	background-color: white;
+	
+	width: 250px;
+	padding-left: 55px
+
+
+	}
+	
+	#idDivLeft {
+	border:solid;
+	background-color: white;
+	height: 500px;
+	width: 350px;
+	}
+
+	.addCardBtn {
+	
+	margin-left: 140px;
+	margin-top: 10px;
+	
+	}
+	.cardDiv{
+		background-color: lightgrey;
+		border: solid;
+		height: 130px;
+		width: 250px;
+		margin-left:auto;
+		margin-right: auto;
+		text-align: center;
+		margin-top: 20px;
+		padding-top: 0px;
+		font-weight: bold;
+
+
+	}
+
+	.cardBtn{
+		margin: 10px
+		
+
+	}
+	
+	
+</style>
+<body style="background-color: lightgrey">
+	<div id = "iddiv">
+		<h1> Basic DOM </h1>
+		<ol id = "idlist">This is a list of stuff
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+		</ol>
+		<button id = "idshowbtn">Show</button>
+		<button id = "idAddBtn" >Add</button><br><br>
+
+
+	</div>
+
+	<div id = "idDivCards">
+		<h1>Working with Cards </h1>
+		<div id = "idDivLeft">
+			<button id = "addCardBtn" class = "addCardBtn"> Add Card</button>
+		</div>
+
+	</div>
+<script type="text/javascript" src = "dom_1.js"></script>
+</body>
+</html>

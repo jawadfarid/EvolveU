@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+}
+
+
+.accountCard {
+	border: solid black;
+	margin: 5px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+
+	background: white;
+	/*justify-content: center;*/
+	/*margin: auto;*/
+}
+
+.container2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+
+
+}
+
+.topcontainer{
+	margin-left: 25em;
+	/*border: solid;*/
+
+}
+
+.linkedList-topContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*border: solid;*/
+}
+
+.linkedList-topContainer button{
+	margin-left:  2.5em;
+	/*border: solid;*/
+}
+
+.list-container0{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.list-container1{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.list-container2{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.list-container2 button{
+	margin: 2em;
+	
+}
+
+.list-container3{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.fifo-container3{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 40em;
+}
+
+.list-container4{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.NodeCard {
+/*	border: solid black;*/
+	margin: 5px;
+	padding: 25px
+}
+
+
+.topcontainer button{
+	margin-left: 2em;
+	margin-top: .2em;
+}
+
+.containerLeft {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	/*border: solid black*/
+}
+
+.containerRight {
+	display: flex;
+	flex-direction: column;
+	background: white;
+	/*border: solid black;*/
+	margin-left: 100px;
+
+}
+
+.buttons{
+	width: 100px;
+}
+.inputs{
+	width: 150px;
+}
+
+.editDiv {
+	height:50px;
+	margin:50px;
+	border: solid black;
+	justify-content:center;
+
+}
+input {
+	width: 150px
+}
+
+.cityCard {
+	border: solid black;
+	margin: 5px;
+
+}
+
+.cityCard button {
+	/*display: flex;
+	flex-direction: row;
+	*//*justify-content: center*/	
+	margin-left: calc(50% - 10%);
+	margin-bottom: 10px
+
+}
+
+.cityCard:hover {
+	background-color: #1AAB8A;
+}
+
+.detialDiv {
+	margin-left: 5em
+
+
+}
+
+.detialDiv input {
+	margin-left: 9em;
+	border: none;
+	background-color : white;
+}
+
+
+.detialDiv label {
+	position: absolute;
+}
+
+#idMovedInput {
+	position: absolute;
+	/*border: solid;*/
+}
+/*
+#idMovedInput[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+#idMovedInput[type=text]:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}*/
+
+
+#idMovedInput, .input-textarea textarea {
+	transition: all 0.30s ease-in-out;
+	-webkit-transition: all 0.30s ease-in-out;
+ 	-moz-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+ 	border:#CC3030 1px solid;
+ 	outline:none;
+	padding: 2px;
+	border-radius: 5px;
+	/*margin: 2px;*/
+	border:1px solid rgba(26, 171, 138, 0.5);
+}
+ 
+#idMovedInput:focus, .input-textarea textarea:focus {
+	box-shadow: 0 0 5px 2px rgba(26, 171, 138, 0.8);
+	-webkit-box-shadow: 0 0 5px 2px rgba(26, 171, 138,, 0.8);
+	-moz-box-shadow: 0 0 5px 2px rgba(26, 171, 138,, 0.8);
+	-o-box-shadow: 0 0 5px 2px rgba(26, 171, 138,, 0.8);
+	-ms-box-shadow: 0 0 5px 2px rgba(26, 171, 138, 0.8);
+	transition: all 0.30s ease-in-out;
+	-webkit-transition: all 0.30s ease-in-out;
+ 	-moz-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	border:1px solid rgba(26, 171, 138, 0.8);
+	position: absolute;
+}
+
+#idMovedInput, .input-textarea  {
+	background: none;
+	border: 0;}
+
+
+
+
+.topcontainer button{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:40px;
+  width: 250px;
+  font-family: 'Roboto', sans-serif;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.topcontainer button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.topcontainer button:before,.topcontainer buttons:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.topcontainer button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.topcontainer button:hover:before,.topcontainer button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+
+}
+
+
+.topcontainer table,th,td{
+  border: 2.5px solid black;
+  border-collapse: collapse;
+}
+
+table tr td {
+  /*border: 0;*/
+  padding: 5px;
+}
+
+
+th {
+  text-align: center;
+  padding: 5px;
+}
+

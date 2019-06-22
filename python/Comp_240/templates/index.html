@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Customer Informtion</h1>
+    <ul>
+      {% for item in test_dict %}
+      <li>{{item}} {{test_dict[item].cust_name}}</li>
+      {% endfor %}
+    </ul>
+
+</body>
+</html>
