@@ -1,0 +1,24 @@
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #005eb8;
+}
+#catabtn {
+ 
+}
+.logbtn {
+    background-color: #005eb8;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+.logbtn:hover {
+    background-color: #1188FB;
+}
+.welcome {
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+}

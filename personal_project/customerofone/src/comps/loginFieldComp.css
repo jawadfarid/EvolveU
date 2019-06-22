@@ -1,0 +1,79 @@
+.loginBody {
+   position: absolute;
+   left: 0;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   background-color: black;
+   opacity: 0.5;
+   cursor: pointer;
+
+   filter: blur(10px);
+   -webkit-filter: blur(10px);
+   -moz-filter: blur(10px);
+   -o-filter: blur(10px);
+   -ms-filter: blur(10px);
+   /* filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='svgMask'><feGaussianBlur stdDeviation='10' /></filter></svg>#svgMask"); */
+}
+
+#loginForm{
+	background: white;
+	height: 270px;
+	width: 400px;
+	position: absolute;
+	top: calc(50vh - (/* height */270px / 2));
+	left: calc(50vw - (/* width */400px / 2));
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 5px 5px 10px;
+	border: solid black 1px;
+	border-radius: 3px;
+}
+
+input{
+	margin: 3px;
+	padding-left: 4px;
+	outline: none;
+	border: solid #005eb8 1px;
+	border-radius: 2px;
+}
+input:focus{
+	box-shadow: 1px 1px 1px 1px rgba(17, 136, 251, 0.3);
+}
+
+#logo{
+	height: 100px;
+	margin-top: -55px;
+}
+
+#welcome{
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+#welcome:hover{
+	cursor: default;
+}
+
+#continue{
+	margin: 5px;
+}
+#continue:hover{
+	cursor: default;
+}
+
+#innerLog{
+	outline: none;
+	background-color: #005eb8;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  margin-top: 2px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+}
+#innerLog:hover{
+	cursor: pointer;
+	background: #1188FB;
+}
