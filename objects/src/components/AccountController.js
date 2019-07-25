@@ -15,7 +15,7 @@ class AccountController {
 		//const newAC = new Account(null,name, this.accountArray.id)
 		this.accountArray.push(newAC)
 	}
-gh
+
 	removeAccount(index) {
 		this.accountArray = this.accountArray.filter((item,i) => i !== index)
 	}
