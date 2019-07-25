@@ -101,9 +101,32 @@ class Line_Items(db.Model):
 #########################################
 
 
-# @app.route("/")
-# def info():
-# 	test = Helper("invoices.xlsx")
+@app.route("/invoices", methods=['GET'])
+def invoices():
+	inv_info = Invoice.query.all()
+	inv_list = []
+	for inv in inv_info:
+		inv_list.append(inv.__repr__())
+	return jsonify(inv_list), 200
+
+@app.route("/customers", methods=['GET'])
+def invoices():
+	cust_info = Invoice.query.all()
+	cust_list = []
+	for cust in cust_info:
+		cust_list.append(cust.__repr__())
+	return jsonify(cust_list), 200
+
+@app.route("/products", methods=['GET'])
+def invoices():
+	prod_info = Invoice.query.all()
+	prod_list = []
+	for prod in prod_info:
+		cust_list.append(prod.__repr__())
+	return jsonify(prod_list), 200
+
+
+# test = Helper("invoices.xlsx")
 # 	test_dict = test.cust_dict()
 # 	return str(test_dict)
 
