@@ -1,6 +1,8 @@
 from flask import Flask, render_template, jsonify, url_for, redirect, request,json
 from flask_restful import Resource, Api
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate 
 
 app = Flask(__name__)
 # api= Api(app)
@@ -75,24 +77,24 @@ class Invoice(db.Model):
 		self.inv_date = inv_date
 	
 	def __repr__(self):
-	return f"Invoice ID: {self.inv_id}, Invoice Date: {self.inv_date}"
+		return f"Invoice ID: {self.inv_id}, Invoice Date: {self.inv_date}"
 
 
 class Line_Items(db.Model):
 	__tablename__ = "Line_Items"
 	
 	id = db.Column(db.Integer, primary_key=True)
-    inv_id = db.Column(db.Integer,db.ForeignKey("invoices.inv_id"), nullable=False))
-    prod_id = db.Column(db.Integer,db.ForeignKey("productss.prod_id"), nullable=False))
-    qty = db.Column(db.Integer)
+	inv_id = db.Column(db.Integer,db.ForeignKey("invoices.inv_id"), nullable=False)
+	prod_id = db.Column(db.Integer,db.ForeignKey("productss.prod_id"), nullable=False)
+	qty = db.Column(db.Integer)
 
-    def __init__(self, inv_id, prod_id, qty):
-        self.inv_num = inv_id
-        self.prod_id = prod_id
-        self.qty = qty
-	
+	def __init__(self, inv_id, prod_id, qty):
+		self.inv_num = inv_id
+		self.prod_id = prod_id
+		self.qty = qty
+
 	def __repr__(self):
-	return f"Invoice ID: {self.inv_id}, Invoice Date: {self.inv_date}"
+		return f"Invoice ID: {self.inv_id}, Invoice Date: {self.inv_date}"
 
 #########################################
 #########################################
@@ -110,19 +112,19 @@ def invoices():
 	return jsonify(inv_list), 200
 
 @app.route("/customers", methods=['GET'])
-def invoices():
-	cust_info = Invoice.query.all()
+def customers():
+	cust_info = Customer.query.all()
 	cust_list = []
 	for cust in cust_info:
 		cust_list.append(cust.__repr__())
 	return jsonify(cust_list), 200
 
 @app.route("/products", methods=['GET'])
-def invoices():
-	prod_info = Invoice.query.all()
+def products():
+	prod_info = Product.query.all()
 	prod_list = []
 	for prod in prod_info:
-		cust_list.append(prod.__repr__())
+		prod_list.append(prod.__repr__())
 	return jsonify(prod_list), 200
 
 
@@ -136,8 +138,29 @@ def invoices():
 # 	test_dict = test.cust_dict()
 # 	return render_template("index.html",test_dict=test_dict)
 
+@app.route("/invoice_detail/<inv_id>",methods = ["GET"])
+def invoice_detail():
+	items = Line_Items.query.filter_by(inv_id=inv_id).all() #returns an array of query results
+	invoice = Invoice.query.filter_by(inv_id=inv_id).first() # returns a single value of query results
+	customer = Customer.query.filter_by(cust_id=invoice.cust_id).first()
 
-@app.route("/invoice_list", method=["GET"])
+	total_prods_cost=[]
+	product_list = []
+	for item in items:
+		currentprod = Product.query.filter_by(prod_id=item.prod_id).first()
+		total_prods_cost +=currentProd.prod_cost*item.qty
+		currentprod_stringform = currentprod.__repr__()
+		product_list.append(currentprod_stringform)
+
+	invoice_json = {"Invoice": invoice.__repr__(), "Customer" : customer.__repr__(), "Products":product_list, "Total Cost": total_prods_cost}
+	resp = jsonify(invoice_json)
+	return resp, 200
+
+
+
+
+
+@app.route("/invoice_list", methods=["GET"])
 def my_invoice():
 	my_list = []
 	test = Invoice.query.all()
