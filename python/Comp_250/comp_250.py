@@ -127,17 +127,6 @@ def products():
 		prod_list.append(prod.__repr__())
 	return jsonify(prod_list), 200
 
-
-# test = Helper("invoices.xlsx")
-# 	test_dict = test.cust_dict()
-# 	return str(test_dict)
-
-# @app.route("/customer")
-# def customer():
-# 	test = Helper("invoices.xlsx")
-# 	test_dict = test.cust_dict()
-# 	return render_template("index.html",test_dict=test_dict)
-
 @app.route("/invoice_detail/<inv_id>",methods = ["GET"])
 def invoice_detail():
 	items = Line_Items.query.filter_by(inv_id=inv_id).all() #returns an array of query results
@@ -156,6 +145,18 @@ def invoice_detail():
 	resp = jsonify(invoice_json)
 	return resp, 200
 
+@app.route("/addproduct", methods = [ "GET", "POST"])
+def add_product():
+	response = request.get_json()
+	new_prod = Product(response["newProd"]["prodName"], response["newProd"]["prodCost"])
+
+	db.session.add(new_prod)
+	db.session.commit()
+
+	new_line_item = Line_Items(response["invId"],new_prod.prod_id,response["newProd"]["prodQty"])
+	db.session.add(new_line_item)
+	db.session.commit()
+	return jsonify({"New Product Added to the Database": "OK"}), 200
 
 
 
